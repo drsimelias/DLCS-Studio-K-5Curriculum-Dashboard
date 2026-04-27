@@ -1149,6 +1149,11 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--gold2);outline-offs
   gap: 14px;
   align-items: start;
 }
+/* Each grade column is a flex column so its cards can be equal height */
+.wv-col {
+  display: flex;
+  flex-direction: column;
+}
 
 /* ── Grade column header ── */
 .wv-col {}
@@ -1192,14 +1197,16 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--gold2);outline-offs
   transition: box-shadow .18s, transform .18s, border-color .18s;
   cursor: pointer;
   margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
 }
 .wv-card:hover {
   box-shadow: 0 5px 22px rgba(0,0,0,.13);
   transform: translateY(-2px);
   border-color: rgba(0,0,0,.2);
 }
-.wv-card-accent { height: 4px; }
-.wv-card-inner { padding: 11px 13px 10px; }
+.wv-card-accent { height: 4px; flex-shrink: 0; }
+.wv-card-inner { padding: 11px 13px 10px; flex: 1; display: flex; flex-direction: column; }
 .wv-card-meta {
   font-family: "DM Mono", monospace;
   font-size: .56rem;
@@ -1235,6 +1242,7 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--gold2);outline-offs
   color: var(--g50);
   line-height: 1.45;
   font-style: italic;
+  margin-top: auto;
 }
 .wv-card-btn {
   width: 100%;
